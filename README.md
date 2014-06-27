@@ -1,3 +1,4 @@
+![alt tag](assets/ilustr.jpg)
 jquery-sectionsnap.js
 ===========
 
