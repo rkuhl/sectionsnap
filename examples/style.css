@@ -1,0 +1,17 @@
+html, body {
+	padding: 0;
+	margin: 0;
+}
+
+.section {
+	min-height: 300px;
+}
+.s1 {
+	background-color: #00f5a1;
+}
+.s2 {
+	background-color: #fc225c;
+}
+.s3 {
+	background-color: #000000;
+}

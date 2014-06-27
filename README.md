@@ -23,7 +23,7 @@ $(document).ready(function() {
 ```
 Options
 ---
-```delay``` time dilay (ms)  
+```delay``` time delay (ms)  
 ```selector``` selector (default ".section")  
 ```reference``` [0-1] % of window height from which we start snaping (default .9)  
 ```animationTime``` snap scrolling animation time (ms)
