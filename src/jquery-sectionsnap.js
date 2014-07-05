@@ -10,7 +10,8 @@
 		var $wrapper = this
 		, direction = 'down'
 		, currentScrollTop = $(window).scrollTop()
-		, scrollTimer;
+		, scrollTimer
+		, animating = false;
 
 		// check the direction
 		var updateDirection = function() {
@@ -55,15 +56,19 @@
 		var snap = function() {
 			var $target = getClosestElement();
 			if ($target) {
+				animating = true;
 				$('html, body').animate({
 						scrollTop: ($target.offset().top)
 					}, settings.animationTime, function() {
 						window.clearTimeout(scrollTimer);
+						animating = false;
 					});
 			}
 		}
 		// on window scroll
 		var windowScroll = function() {
+			if (animating) 
+				return;
 			updateDirection();
 			window.clearTimeout(scrollTimer);
 			scrollTimer = window.setTimeout(snap, settings.delay);
