@@ -27,15 +27,19 @@ Options
 ```delay``` time delay (ms)  
 ```selector``` selector (default ".section")  
 ```reference``` [0-1] % of window height from which we start snaping (default .9)  
-```animationTime``` snap scrolling animation time (ms)
+```animationTime``` snap scrolling animation time (ms)  
+```offsetTop``` offset top (no snap before scroll reaches this position)  
+```offsetBottom``` offset bottom (no snap after bottom - offsetBottom)
 JS:  
 ```javascript
 $(document).ready(function() {
 	$(".sections-wrapper").sectionsnap({
-		delay : 100
-		, selector : '.section'
-		, reference : 1
+		delay 			: 100
+		, selector 		: '.section'
+		, reference 	: 1
 		, animationTime : 600
+		, offsetTop 	: 100
+		, offsetBottom 	: 80
 	});
 });
 ```  

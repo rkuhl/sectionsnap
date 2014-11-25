@@ -5,6 +5,8 @@
 			, 'selector'		: ".section" // selector
 			, 'reference'		: .9 // % of window height from which we start
 			, 'animationTime'	: 400 // animation time (snap scrolling)
+			, 'offsetTop'		: 0 // offset top (no snap before scroll reaches this position)
+			, 'offsetBottom'	: 0 // offset bottom (no snap after bottom - offsetBottom)
 		}, options);		
 		
 		var $wrapper = this
@@ -69,6 +71,12 @@
 		var windowScroll = function() {
 			if (animating) 
 				return;
+			var st = $(window).scrollTop();
+			if (st < settings.offsetTop)
+				return;
+			if (st > ($("html").height() - settings.offsetBottom))
+				return;
+
 			updateDirection();
 			window.clearTimeout(scrollTimer);
 			scrollTimer = window.setTimeout(snap, settings.delay);
