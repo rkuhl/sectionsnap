@@ -74,9 +74,8 @@
 			var st = $(window).scrollTop();
 			if (st < settings.offsetTop)
 				return;
-			if (st > ($("html").height() - settings.offsetBottom))
+			if (st > ($("html").height() - $(window).height() - settings.offsetBottom))
 				return;
-
 			updateDirection();
 			window.clearTimeout(scrollTimer);
 			scrollTimer = window.setTimeout(snap, settings.delay);
