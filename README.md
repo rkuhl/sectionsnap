@@ -6,6 +6,7 @@ jQuery plugin that will snap to next section after user scrolles over a HTML sin
 
 Example
 ---
+Check out the [example](http://kuhl.pl/github/sectionsnap/).  
 HTML:    
 ```html
 <script src="jquery.js" type="text/javascript"></script>  
